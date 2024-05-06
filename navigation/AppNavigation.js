@@ -12,6 +12,7 @@ import Smartswitch from '../assets/svgs/smartswitch';
 import Help from '../assets/svgs/help';
 import AddDevice from '../assets/svgs/addDevice';
 import {View,Text} from 'react-native';
+import { useNavigation } from '@react-navigation/native'; 
 
 const Tab = createBottomTabNavigator();
 const screenOptions = {
@@ -43,10 +44,17 @@ const HomeStackNavigator = () => (
       component={AddDeviceScreen}
       options={{ headerShown: false, tabBarVisible: false }} // Hide the tab bar for this screen
     />
+    <HomeStack.Screen
+      name="SmartSwitchScreen"
+      component={SmartSwitchScreen}
+      options={{ headerShown: false , tabBarVisible: false }}
+    />
   </HomeStack.Navigator>
 );
 
 export default function AppNavigation() {
+  
+
   return (
     <Tab.Navigator
       screenOptions={screenOptions}

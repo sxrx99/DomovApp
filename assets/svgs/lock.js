@@ -4,62 +4,8 @@ import {Image} from 'react-native';
 
 export default function Lock() {
   return (
-    <Svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    width={45}
-    height={46}
-    fill="none"
-   
-  >
-    <G filter="url(#a)">
-      <Path fill="url(#b)" d="M10 6.5h25v25H10z" shapeRendering="crispEdges" />
-    </G>
-    <Defs>
-      <Pattern
-        id="b"
-        width={1}
-        height={1}
-        patternContentUnits="objectBoundingBox"
-      >
-        <Use xlinkHref="#c" transform="scale(.01)" />
-      </Pattern>
-      <Filter
-        id="a"
-        width={45}
-        height={45}
-        x={0}
-        y={0.5}
-        colorInterpolationFilters="sRGB"
-        filterUnits="userSpaceOnUse"
-      >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
-        <feColorMatrix
-          in="SourceAlpha"
-          result="hardAlpha"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-        />
-        <feOffset dy={4} />
-        <feColorMatrixeGaussianBlur stdDeviation={5} />
-        <feComposite in2="hardAlpha" operator="out" />
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
-        <feBlend
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_1015_473"
-        />
-        <feBlend
-          in="SourceGraphic"
-          in2="effect1_dropShadow_1015_473"
-          result="shape"
-        />
-      </Filter>
-      <Image
-        xlinkHref="data:image/png;base64,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"
-        id="c"
-        width={100}
-        height={100}
-      />
-    </Defs>
+    <Svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} >
+    <Path d="M15 2c-3.854 0-7 3.146-7 7v2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V13a2 2 0 0 0-2-2h-2V9c0-3.728-2.963-6.731-6.645-6.928A1 1 0 0 0 15 2zm0 2c2.774 0 5 2.226 5 5v2H10V9c0-2.774 2.226-5 5-5z" />
   </Svg>
 
    

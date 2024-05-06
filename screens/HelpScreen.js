@@ -28,14 +28,25 @@ export default function HelpScreen() {
   
   return (
     <ScreenWrapper>
-      <View style={tw `mx-5 flex flex-col   `}>
+      <View style={tw `mx-3 flex flex-col   `}>
       <View style={tw `flex items-center m-15`}>
       <Logo/>
       </View>
-      <Text style={[tw`ml-3 text-18px mb-5 mt-7 pb-1`, { fontFamily: 'Inter-Regular', color: colors.maingrey }]}> For further information :  </Text>
-      <View style={[tw`h-full m-3 flex `]}>
+      <Text style={[tw`ml-3 text-18px mb-2 mt-7 pb-1`, { fontFamily: 'Inter-Regular', color: colors.maingrey }]}> For further information :  </Text>
+      <View style={[tw`h-full my-3 mx-2 flex `]}>
         <TouchableOpacity onPress={handleVisit}>
-          <Device name={"Visit our web site"} icon={<Visit />} />
+        <View style={[tw` flex flex-row  items-center`,{ backgroundColor: '#fff',   height: 65,
+         width: '100%',
+         borderRadius: 10,
+         borderColor: 'white',
+         borderRadius: 8,
+         marginBottom: 20,
+         paddingHorizontal: 10,
+         fontSize: 16, }]}>
+          <Visit/>
+         <Text style={[tw `text-18px pl-3 `,{fontFamily: 'Inter-Regular', color:colors.maingrey}]}>Visit our website </Text>
+      
+         </View>
         </TouchableOpacity>
       </View>
       </View>

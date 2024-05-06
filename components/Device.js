@@ -15,8 +15,15 @@ export default function Device({ switchValue , name ,children}) {
     }
  
   return (
-    <View style={[tw` border-0 py-3 px-5 my-2 flex flex-row justify-between rounded-4 shadow-lg `,{ backgroundColor: switchValue ? colors.maingreen : '#fff' }]}>
-      <Text style={[tw `text-18px pt-2`,{fontFamily: 'Inter-Regular', color:switchValue ? '#fff' :colors.maingrey}]}>{name}</Text>
+    <View style={[tw` flex flex-row justify-between items-center`,{ backgroundColor: switchValue ? colors.maingreen : '#fff',   height: 65,
+    width: '100%',
+    borderRadius: 10,
+    borderColor: 'white',
+    borderRadius: 8,
+    marginBottom: 20,
+    paddingHorizontal: 10,
+    fontSize: 16, }]}>
+      <Text style={[tw `text-18px `,{fontFamily: 'Inter-Regular', color:switchValue ? '#fff' :colors.maingrey}]}>{name}</Text>
       <View>
         {children}
       </View>

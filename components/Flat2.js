@@ -8,7 +8,7 @@ import ConnectModal from './Modal';
 import Modal2 from './Modal2';
 
 import NetInfo from '@react-native-community/netinfo';
-
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function Flat() {
@@ -32,20 +32,24 @@ export default function Flat() {
 
   const [switchValue , setSwitchValue] = useState(false);
 
-
   useEffect(() => {
     const unsubscribe = NetInfo.addEventListener(state => {
       const isConnected = state.isConnected;
-      const updatedData = data.map(item => {
-        if (item.name === 'Domov') {
-          return { ...item, connected: isConnected };
-        }
-        return item;
-      });
-      setData(updatedData);
-      setSwitchValue(isConnected);
+      const ip = state.details.ipAddress;
+       console.log(ip);
+      // Check if the IP address is equal to '192.168.4.1'
+      if (/*ip === '192.168.4.4' || !isConnected*/ true) {
+        const updatedData = data.map(item => {
+          if (item.name === 'Domov' ) {
+            return { ...item, connected: isConnected };
+          }
+          return item;
+        });
+        setData(updatedData);
+        setSwitchValue(isConnected);
+      }
     });
-
+  
     return () => unsubscribe();
   }, []);
 
@@ -107,8 +111,8 @@ export default function Flat() {
       console.error('Error opening Wi-Fi settings:', error);
     }
   };
-
-
+  
+ 
   return (
     <View>
 
